@@ -14,7 +14,7 @@ resource "aws_instance" "ec2Instance" {
     ami = "ami-09cb80360d5069de4"
     instance_type = var.instanceType
     key_name = "vir-key"
-    vpc_security_group_ids = [ "secGroup" ]
+    vpc_security_group_ids = "secGroup"
     tags = {
       name = "window-instance"
     }
