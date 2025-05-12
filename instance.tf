@@ -1,9 +1,9 @@
-terraform {
-  backend "s3" {
-    bucket = aws_s3_bucket.buckets3.bucket
-    key = "terraform.tfstate"
-  }
-}
+# terraform {
+#   backend "s3" {
+#     bucket = aws_s3_bucket.buckets3.bucket
+#     key = "terraform.tfstate"
+#   }
+# }
 
 provider "aws" {
     region = "us-east-1"  
