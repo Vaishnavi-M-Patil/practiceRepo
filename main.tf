@@ -37,6 +37,11 @@ resource "aws_route_table" "rt" {
     }
 }
 
+resource "aws_route_table_association" "publicRTAsso" {
+    subnet_id = aws_subnet.pub_subnet.id
+    route_table_id = aws_route_table.rt.id
+}
+
 resource "aws_instance" "ubuntu" {
     ami = var.ami
     instance_type = var.instanceType
