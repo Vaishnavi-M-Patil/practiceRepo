@@ -19,5 +19,5 @@ variable "ami" {
 }
 
 variable "key-pair" {
-    default = "vir-key"
+    default = "terra-key"
 }
