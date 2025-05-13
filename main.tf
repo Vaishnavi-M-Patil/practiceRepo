@@ -42,22 +42,26 @@ resource "aws_instance" "ubuntu" {
     instance_type = var.instanceType
     key_name = var.key-pair
     subnet_id = aws_subnet.pub_subnet.id
-#     connection {
-#     type     = "ssh"
-#     user     = "root"
-#     host     = self.public_ip
-#   }
-#     provisioner "file" {
-#         source = "sript.sh"
-#         destination = "/tmp/script.sh"
-#     }
+    connection {
+    type     = "ssh"
+    user     = "root"
+    host     = self.public_ip
+  }
+    provisioner "file" {
+        source = "sript.sh"
+        destination = "/tmp/script.sh"
+    }
 
-#     provisioner "remote-exec" {
-#         inline = [ 
-#             "chmod +x /tmp/script.sh",
-#             "./tmp/script.sh"
-#          ]
-#     }
+    provisioner "remote-exec" {
+        inline = [ 
+            "chmod +x /tmp/script.sh",
+            "./tmp/script.sh"
+         ]
+    }
+
+provisioner "local-exec" {
+    command = "echo 'Instance created'"
+}
 
     tags = {
       name = "Ubuntu Instance"
