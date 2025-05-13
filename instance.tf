@@ -8,10 +8,6 @@
 
 data "aws_key_pair" "vir-key" {
     key_name = "vir-key"
-    filter {
-      name = "vpc-id"
-      values = [ var.vpc ]
-    }
 }
 
 variable "vpc" {
