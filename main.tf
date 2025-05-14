@@ -18,6 +18,6 @@ module "ec2instance" {
   instanceType = var.instanceType
   ami = var.ami
   key-pair = var.key-pair
-  public_subnet_id = var.public_subnet_id
-  security_group_id = var.security_group_id
+  public_subnet_id = module.myvpc.public_subnet_id
+  security_group_id = module.myvpc.security_group_id
 }
