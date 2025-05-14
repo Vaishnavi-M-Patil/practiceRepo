@@ -19,5 +19,5 @@ module "ec2instance" {
   ami = var.ami
   key-pair = var.key-pair
   public_subnet_id = module.myvpc.public_subnet_id
-  security_group_id = module.myvpc.security_group_id
+  security_group_id = module.myvpc.security_groups_id
 }
