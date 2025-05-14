@@ -21,3 +21,11 @@ variable "ami" {
 variable "key-pair" {
     default = "terra-key"
 }
+
+variable "public_subnet_id"{
+    default = module.myvpc.public_subnet_id
+}
+
+variable "security_group_id" {
+    default = module.myvpc.security_group_id
+}

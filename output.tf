@@ -5,3 +5,4 @@ output "aws_instance_public_IP" {
 output "vpc_id" {
     value = module.myvpc.vpc_id
 }
+
