@@ -2,8 +2,8 @@ resource "aws_instance" "ubuntu" {
     ami = var.ami
     instance_type = var.instanceType
     key_name = var.key-pair
-    security_groups = [module.myvpc.aws_security_group.newSecuritygrp.id]
-    subnet_id = module.vpc.pub_subnet.id
+    security_groups = [module.myvpc.security_groups_id]
+    subnet_id = module.myvpc.public_subnet_id
     tags = {
       name = "Ubuntu Instance"
     }
