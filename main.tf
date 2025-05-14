@@ -18,6 +18,7 @@ module "ec2instance" {
   instanceType = var.instanceType
   ami = var.ami
   key-pair = var.key-pair
+  #pass values to instance module that are exposed from vpc module
   public_subnet_id = module.myvpc.public_subnet_id
   security_group_id = module.myvpc.security_groups_id
 }
