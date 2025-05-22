@@ -19,20 +19,8 @@
         line: "Hello this line is added in this file"
     - name: Add Nginx server block
       blockinfile:
-        path: /etc/nginx/conf.d/my_site.conf
+        path: /var/www/html/index.html
         block: |
-          server {
-              listen 80;
-              server_name mysite.example.com;
-
-              location / {
-                  proxy_pass http://localhost:3000;
-                  proxy_set_header Host $host;
-                  proxy_set_header X-Real-IP $remote_addr;
-              }
-          }
+          <h2>Hello world!</h2>
+          <p>Hello world!</p>
         marker: "# {mark} ANSIBLE MANAGED SERVER BLOCK"
-    - name: restart Nginx
-      service:
-        name: nginx
-        state: restarted
