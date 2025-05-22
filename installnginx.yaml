@@ -1,4 +1,4 @@
-- name: install nginx
+- name: install nginx and add line, block in index.html file
   hosts: all
   become: yes
   tasks:
@@ -10,6 +10,7 @@
       apt:
         name: nginx
         state: present
+      tags: nginx
 
     - name: start service
       service:
